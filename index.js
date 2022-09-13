@@ -17,6 +17,12 @@ app.get('/', (req, res) => {
 	res.render('home');
 });
 
+app.get('/dogs', (req, res) => {
+	const dogs = ['Eevee', 'Ponyo', 'Volo', 'Ida'];
+
+	res.render('dogs', { dogs });
+});
+
 app.get('/rand', (req, res) => {
 	// defining variables for EJS
 	const num = Math.floor(Math.random() * 10) + 1;
