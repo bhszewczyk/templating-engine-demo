@@ -16,3 +16,9 @@ app.get('/', (req, res) => {
 	// no need to add .ejs
 	res.render('home');
 });
+
+app.get('/rand', (req, res) => {
+	// defining variables for EJS
+	const num = Math.floor(Math.random() * 10) + 1;
+	res.render('random', { rand: num });
+});
