@@ -10,5 +10,7 @@ app.listen(3000, () => {
 });
 
 app.get('/', (req, res) => {
-	res.send('<h1>This is my homepage. Welcome!</h1>');
+	// by default EJS looks for a folder /views
+	// no need to add .ejs
+	res.render('home');
 });
