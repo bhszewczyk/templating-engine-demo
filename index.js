@@ -3,6 +3,8 @@ const app = express();
 const path = require('path');
 const subpageData = require('./data.json');
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 // adding EJS (first install this)
 // npm i ejs
 app.set('view engine', 'ejs');
@@ -23,13 +25,13 @@ app.get('/s/:subpage', (req, res) => {
 	}
 });
 
-app.get('/s/dogs', (req, res) => {
+app.get('/dogs', (req, res) => {
 	const dogs = ['Eevee', 'Ponyo', 'Volo', 'Ida'];
 
 	res.render('dogs', { dogs });
 });
 
-app.get('/s/rand', (req, res) => {
+app.get('/rand', (req, res) => {
 	// defining variables for EJS
 	const num = Math.floor(Math.random() * 10) + 1;
 	res.render('random', { rand: num });
