@@ -13,7 +13,7 @@ app.set('views', path.join(__dirname, '/views'));
 app.get('/', (req, res) => {
 	// by default EJS looks for a folder /views
 	// no need to add .ejs
-	res.render('home');
+	res.render('home', { subname: 'home', title: 'home' });
 });
 app.get('/s/:subpage', (req, res) => {
 	const { subpage } = req.params;
@@ -28,13 +28,13 @@ app.get('/s/:subpage', (req, res) => {
 app.get('/dogs', (req, res) => {
 	const dogs = ['Eevee', 'Ponyo', 'Volo', 'Ida'];
 
-	res.render('dogs', { dogs });
+	res.render('dogs', { dogs, subname: 'dogs', title: 'dogs' });
 });
 
 app.get('/rand', (req, res) => {
 	// defining variables for EJS
 	const num = Math.floor(Math.random() * 10) + 1;
-	res.render('random', { rand: num });
+	res.render('random', { rand: num, subname: 'random', title: 'random' });
 });
 
 app.listen(3000, () => {
