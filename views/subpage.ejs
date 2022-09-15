@@ -4,9 +4,24 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title><%= subpage %> subpage</title>
+		<title><%= subname %> subpage</title>
 	</head>
 	<body>
-		<h1>You are currently viewing a <%= subpage %> subpage</h1>
+		<h1>You are currently viewing a <%= subname %> subpage</h1>
+		<h2><%= description %></h2>
+		<p>Total subscribers: <%= subscribers %></p>
+		<hr />
+		<% for (let post of posts) {%>
+		<article>
+			<p>
+				<%= post.title %> -
+				<span
+					><strong><em><%= post.author%></em></strong></span
+				>
+				<% if (post.img) { %>
+				<img src="<%= post.img %> " alt="Post image" /> <% } %>
+			</p>
+		</article>
+		<%}%>
 	</body>
 </html>
