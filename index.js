@@ -19,7 +19,7 @@ app.get('/s/:subpage', (req, res) => {
 	if (data) {
 		res.render('subpage', { ...data });
 	} else {
-		return;
+		res.render('notfound', { subpage });
 	}
 });
 
