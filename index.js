@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const subpageData = require('./data.json');
 
 // adding EJS (first install this)
 // npm i ejs
